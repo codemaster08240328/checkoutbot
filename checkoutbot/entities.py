@@ -50,6 +50,11 @@ class CheckoutEvent:
         print(f"{self.id}: {self.customer.alias} checked out")
 
 
+@dataclasses.dataclass(frozen=True)
+class Checkout:
+    customer_id: int
+    item_id: int
+
 EventType = Union[AddEvent, CheckoutEvent]
 
 
